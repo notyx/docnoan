@@ -52,7 +52,7 @@ export default function AfterJoining() {
         >
           <h2 className="text-3xl md:text-4xl font-extrabold">
             Voici ce qui se passe après avoir rejoint la{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
               D.O.C
             </span>
           </h2>
@@ -66,12 +66,12 @@ export default function AfterJoining() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-500/30 transition-all duration-300"
+              className="p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-blue-500/30 transition-all duration-300"
             >
               <div className="flex items-start gap-5">
-                <div className="relative w-12 h-12 rounded-xl bg-purple-600/90 flex items-center justify-center shrink-0">
+                <div className="relative w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center shrink-0">
                   <step.icon className="w-6 h-6 text-white" />
-                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-purple-400 text-xs font-bold text-white flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-blue-400 text-xs font-bold text-white flex items-center justify-center">
                     {step.number}
                   </span>
                 </div>
@@ -79,7 +79,7 @@ export default function AfterJoining() {
                   <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-gray-400 leading-relaxed mb-2">{step.description}</p>
                   {step.quote && (
-                    <blockquote className="border-l-4 border-purple-500 pl-4 mt-4 text-white font-semibold text-sm">
+                    <blockquote className="border-l-4 border-blue-500 pl-4 mt-4 text-white font-semibold text-sm">
                       {step.quote}
                     </blockquote>
                   )}

@@ -37,7 +37,7 @@ export default function WhatYouGet() {
         >
           {included.map((item, i) => (
             <div key={i} className="flex items-center gap-4 py-4 first:pt-0 last:pb-0">
-              <div className="w-9 h-9 rounded-full bg-purple-600/80 flex items-center justify-center shrink-0">
+              <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
                 <item.icon className="w-4 h-4 text-white" />
               </div>
               <span className="text-gray-200 font-medium">{item.text}</span>

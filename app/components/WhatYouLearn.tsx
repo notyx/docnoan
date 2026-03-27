@@ -48,7 +48,7 @@ export default function WhatYouLearn() {
         >
           <h2 className="text-3xl md:text-4xl font-extrabold">
             Ce que tu vas{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
               apprendre
             </span>
           </h2>
@@ -62,10 +62,10 @@ export default function WhatYouLearn() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.07 }}
-              whileHover={{ y: -4, borderColor: "rgba(147,51,234,0.4)" }}
-              className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 transition-all duration-300 group"
+              whileHover={{ y: -4 }}
+              className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-blue-500/30 transition-all duration-300 group"
             >
-              <div className="w-10 h-10 rounded-xl bg-purple-600/80 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <skill.icon className="w-5 h-5 text-white" />
               </div>
               <h3 className="font-bold text-white mb-2">{skill.title}</h3>

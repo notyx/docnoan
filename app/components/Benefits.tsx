@@ -44,7 +44,11 @@ export default function Benefits() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
-            Arrêtez de <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-300">regarder</span> les autres gagner de l'argent en ligne.
+            Arrêtez de{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              regarder
+            </span>{" "}
+            les autres gagner de l'argent en ligne.
           </h2>
         </motion.div>
 
@@ -56,10 +60,10 @@ export default function Benefits() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-500/30 transition-all duration-300"
+              className="p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-blue-500/30 transition-all duration-300"
             >
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-xl bg-purple-600/90 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center shrink-0">
                   <benefit.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -67,19 +71,17 @@ export default function Benefits() {
                     {benefit.title}
                   </h3>
                   <p className="text-gray-400 leading-relaxed mb-3">{benefit.description}</p>
-
                   {benefit.bullets && (
                     <ul className="text-gray-400 mb-3 space-y-1">
                       {benefit.bullets.map((b, i) => (
                         <li key={i} className="flex items-center gap-2">
-                          <span className="text-purple-400">•</span> {b}
+                          <span className="text-blue-400">•</span> {b}
                         </li>
                       ))}
                     </ul>
                   )}
-
                   {benefit.quote && (
-                    <blockquote className="border-l-4 border-purple-500 pl-4 mt-4 text-white font-semibold text-sm md:text-base">
+                    <blockquote className="border-l-4 border-blue-500 pl-4 mt-4 text-white font-semibold text-sm md:text-base">
                       {benefit.quote}
                     </blockquote>
                   )}

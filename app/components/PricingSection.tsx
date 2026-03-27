@@ -18,8 +18,7 @@ const included = [
 export default function PricingSection() {
   return (
     <section className="relative w-full py-32 px-4 flex flex-col items-center justify-center">
-      {/* Background glow */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-700/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-2xl w-full">
         <div className="text-center mb-10">
@@ -33,12 +32,11 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="rounded-2xl bg-white/[0.03] border border-white/10 p-6 md:p-8 divide-y divide-white/5 relative overflow-hidden"
         >
-          {/* Accent top border */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-violet-400" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-cyan-400" />
 
           {included.map((item, i) => (
             <div key={i} className="flex items-center gap-4 py-4 first:pt-2 last:pb-4">
-              <div className="w-9 h-9 rounded-full bg-purple-600/80 flex items-center justify-center shrink-0">
+              <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
                 <item.icon className="w-4 h-4 text-white" />
               </div>
               <span className="text-gray-200 font-medium">{item.text}</span>
@@ -54,7 +52,7 @@ export default function PricingSection() {
         >
           <Link
             href="/checkout"
-            className="block w-full py-5 rounded-xl text-white font-bold text-lg text-center transition-all transform hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r from-purple-600 to-violet-500 hover:shadow-[0_0_30px_rgba(147,51,234,0.4)]"
+            className="block w-full py-5 rounded-xl text-white font-bold text-lg text-center transition-all transform hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r from-blue-600 to-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]"
           >
             Rejoindre la D.O.C maintenant
           </Link>
