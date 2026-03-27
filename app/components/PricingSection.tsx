@@ -1,17 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { BookOpen, Calendar, Users, Package, BarChart2, Gift, CheckCircle, ShieldCheck } from "lucide-react";
 import Link from "next/link";
+
+const included = [
+  { icon: BookOpen, text: "Accès à la formation complète (+ toutes les futures mises à jour)" },
+  { icon: Calendar, text: "3 coachings par semaine" },
+  { icon: Users, text: "Accès à une communauté privée active (+950 membres)" },
+  { icon: Package, text: "12 produits PLR à revendre" },
+  { icon: BarChart2, text: "2 produits MRR à revendre" },
+  { icon: Gift, text: "Exclusive Bonuses" },
+  { icon: CheckCircle, text: "Plan d'action première vente en 7 jours" },
+  { icon: ShieldCheck, text: "Garantie / remboursement" },
+];
 
 export default function PricingSection() {
   return (
     <section className="relative w-full py-32 px-4 flex flex-col items-center justify-center">
       {/* Background glow */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-700/10 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 max-w-lg w-full">
-        <div className="text-center mb-12">
+      <div className="relative z-10 max-w-2xl w-full">
+        <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Prêt à vous lancer ?</h2>
           <p className="text-gray-400">Un seul paiement, un accès à vie.</p>
         </div>
@@ -20,40 +31,32 @@ export default function PricingSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden"
+          className="rounded-2xl bg-white/[0.03] border border-white/10 p-6 md:p-8 divide-y divide-white/5 relative overflow-hidden"
         >
           {/* Accent top border */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-cyan-400" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-violet-400" />
 
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-1">Accès Complet</h3>
-            <p className="text-gray-400 text-sm">Paiement unique pour un accès à vie</p>
-          </div>
+          {included.map((item, i) => (
+            <div key={i} className="flex items-center gap-4 py-4 first:pt-2 last:pb-4">
+              <div className="w-9 h-9 rounded-full bg-purple-600/80 flex items-center justify-center shrink-0">
+                <item.icon className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-gray-200 font-medium">{item.text}</span>
+            </div>
+          ))}
+        </motion.div>
 
-          <div className="flex justify-center items-end gap-1 mb-8">
-            <span className="text-5xl font-extrabold">97</span>
-            <span className="text-2xl font-semibold text-gray-400">€</span>
-          </div>
-
-          <ul className="space-y-4 mb-10">
-            {[
-              "Toutes les vidéos de la formation",
-              "Accès au groupe privé Discord",
-              "Ressources & templates téléchargeables",
-              "Mises à jour incluses à vie",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-gray-300 text-sm">
-                <Check className="w-5 h-5 text-blue-400 shrink-0" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-6"
+        >
           <Link
             href="/checkout"
-            className="block w-full py-4 px-6 rounded-xl text-white font-semibold text-lg text-center transition-all transform hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r from-blue-600 to-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+            className="block w-full py-5 rounded-xl text-white font-bold text-lg text-center transition-all transform hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r from-purple-600 to-violet-500 hover:shadow-[0_0_30px_rgba(147,51,234,0.4)]"
           >
-            Rejoindre la formation →
+            Rejoindre la D.O.C maintenant
           </Link>
         </motion.div>
       </div>

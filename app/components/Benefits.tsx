@@ -1,41 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Target, Rocket, ShieldCheck } from "lucide-react";
+import { Sparkles, UserX, TrendingUp } from "lucide-react";
 
 const benefits = [
   {
-    title: "Méthode Complète",
-    description: "Un plan d'action de A à Z : de la recherche d'idée jusqu'à l'automatisation de vos ventes.",
-    icon: Target,
+    icon: Sparkles,
+    title: "Vous n'avez pas besoin d'être un expert",
+    description:
+      "Trouver des produits gagnants ne dépend pas de votre expertise ou d'une vie entière passée à pratiquer quelque chose. Il s'agit d'identifier un problème et de créer un produit de qualité avec l'aide de vos nouveaux outils d'IA.",
+    quote:
+      "Dans la D.O.C, nous fournissons même des produits prêts à revendre, qui m'ont généré des milliers d'euros, et vous gardez 100 % des bénéfices.",
   },
   {
-    title: "Croissance Accélérée",
-    description: "Apprenez les stratégies utilisées par les meilleurs pour faire décoller votre produit sans perdre de temps.",
+    icon: UserX,
+    title: "Vous n'avez pas besoin de montrer votre visage",
+    description:
+      "La D.O.C vous apprend à vendre vos produits digitaux sans jamais montrer votre visage, si vous le souhaitez, en utilisant l'IA et de nombreuses autres méthodes.",
+    quote: null,
+  },
+  {
     icon: TrendingUp,
-  },
-  {
-    title: "Liberté Financière",
-    description: "Générez des revenus passifs 24/7 en vendant vos connaissances et créations digitales.",
-    icon: Rocket,
-  },
-  {
-    title: "Investissement Sécurisé",
-    description: "Appliquez notre stratégie éprouvée pour minimiser les risques et maximiser votre ROI rapidement.",
-    icon: ShieldCheck,
+    title: "Vous n'avez pas besoin d'avoir vendu en ligne auparavant",
+    description:
+      "La formation complète comprise dans la D.O.C offre aux débutants un chemin clair :",
+    bullets: [
+      "Du premier produit à la première vente",
+      "Jusqu'au scaling vers des dizaines de milliers par mois",
+    ],
+    quote:
+      "Un système étape par étape vous guide sur chaque action, chaque raccourci et chaque stratégie. C'est pour cela que nos membres obtiennent de tels résultats dès leurs premiers mois.",
   },
 ];
 
 export default function Benefits() {
   return (
-    <section className="relative w-full py-24 px-4 bg-black/40 border-y border-white/5">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Pourquoi rejoindre cette formation ?</h2>
-          <p className="text-gray-400 text-lg">Découvrez comment nous transformons votre approche de la vente d'influence digitale.</p>
-        </div>
+    <section className="relative w-full py-24 px-4">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
+            Arrêtez de <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-300">regarder</span> les autres gagner de l'argent en ligne.
+          </h2>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-col gap-5">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -43,16 +56,35 @@ export default function Benefits() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -5 }}
-              className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-blue-500/50 hover:bg-white/[0.05] transition-all duration-300 group"
+              className="p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-500/30 transition-all duration-300"
             >
-              <div className="w-12 h-12 mb-6 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
-                <benefit.icon className="w-6 h-6" />
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-xl bg-purple-600/90 flex items-center justify-center shrink-0">
+                  <benefit.icon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed mb-3">{benefit.description}</p>
+
+                  {benefit.bullets && (
+                    <ul className="text-gray-400 mb-3 space-y-1">
+                      {benefit.bullets.map((b, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="text-purple-400">•</span> {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {benefit.quote && (
+                    <blockquote className="border-l-4 border-purple-500 pl-4 mt-4 text-white font-semibold text-sm md:text-base">
+                      {benefit.quote}
+                    </blockquote>
+                  )}
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-white">{benefit.title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">
-                {benefit.description}
-              </p>
             </motion.div>
           ))}
         </div>
