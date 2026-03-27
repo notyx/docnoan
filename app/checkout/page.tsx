@@ -10,6 +10,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { motion } from "framer-motion";
 import { ShieldCheck, Lock } from "lucide-react";
+import PromoBanner from "../components/PromoBanner";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
@@ -98,11 +99,13 @@ export default function CheckoutPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-black text-white flex items-center justify-center px-4 py-24 relative overflow-hidden">
+    <main className="min-h-screen bg-black text-white px-0 overflow-x-hidden relative">
+      <PromoBanner />
       {/* Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-700/15 blur-[130px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-lg">
+      <div className="relative z-10 w-full flex flex-col items-center justify-center py-16 px-4">
+        <div className="w-full max-w-lg">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -190,12 +193,9 @@ export default function CheckoutPage() {
             <ShieldCheck className="w-4 h-4 text-green-500/70" />
             <span>SSL Sécurisé</span>
           </div>
-          <div className="flex items-center gap-1.5">
-            <Lock className="w-4 h-4 text-blue-500/70" />
-            <span>Données chiffrées</span>
-          </div>
         </motion.div>
       </div>
-    </main>
+    </div>
+  </main>
   );
 }
