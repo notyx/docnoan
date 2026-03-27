@@ -182,6 +182,24 @@ export default function CheckoutPage() {
           )}
         </motion.div>
 
+        {/* Garantie / Reassurance */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="mt-6 p-4 rounded-2xl bg-blue-500/5 border border-blue-500/20 flex items-start gap-4"
+        >
+          <div className="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center shrink-0">
+            <ShieldCheck className="w-6 h-6 text-blue-400" />
+          </div>
+          <div>
+            <p className="text-white font-bold text-sm">Garantie Satisfait ou Remboursé</p>
+            <p className="text-gray-400 text-xs mt-1 leading-relaxed">
+              Si vous n'avez pas généré de vente après 30 jours de mise en pratique sérieuse de la D.O.C, nous vous remboursons l'intégralité de votre investissement.
+            </p>
+          </div>
+        </motion.div>
+
         {/* Badges sécurité */}
         <motion.div
           initial={{ opacity: 0 }}
