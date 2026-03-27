@@ -49,7 +49,7 @@ export default function Hero() {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&showinfo=0"
+            src="https://www.youtube.com/embed/k_eJOFcCEVY?rel=0&showinfo=0"
             title="Présentation de la D.O.C — Digital Origin Community"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
